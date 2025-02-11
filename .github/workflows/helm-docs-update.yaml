@@ -1,0 +1,22 @@
+name: Update Chart Metadata
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  update-chart-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Run helm-docs
+        uses: losisin/helm-docs-github-action@v1
+        with:
+          input: values.yaml
+          git-push: true
+          git-push-user-name: "Marcus Ross"
+          git-push-user-email: "marcus.ross@zahlenhelfer.de"
+          git-commit-message: "chore: update Helm documentation"
