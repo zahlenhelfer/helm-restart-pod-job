@@ -17,6 +17,6 @@ jobs:
         with:
           input: values.yaml
           git-push: true
-          git-push-user-name: "Marcus Ross"
-          git-push-user-email: "marcus.ross@zahlenhelfer.de"
+          git-push-user-name: "$GITHUB_ACTOR"
+          git-push-user-email: "$GITHUB_ACTOR@users.noreply.github.com"
           git-commit-message: "chore: update Helm documentation"
