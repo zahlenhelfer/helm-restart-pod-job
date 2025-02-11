@@ -1,4 +1,4 @@
-name: Update Chart Metadata
+name: Document Helm-Chart
 
 on:
   push:
