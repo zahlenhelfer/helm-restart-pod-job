@@ -2,8 +2,8 @@ name: Update Chart Metadata
 
 on:
   push:
-    tags:
-      - "*"
+    branches:
+      - main
 
 jobs:
   update-chart-metadata:
