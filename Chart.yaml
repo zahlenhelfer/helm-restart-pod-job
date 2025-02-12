@@ -1,6 +1,7 @@
 apiVersion: v2
 name: helm-restart-pod-job
-description: A Helm chart for Kubernetes
+description: This Helm chart will deploy a CronJob to restart pods that have a specific time-to-live annotated. For More Details - https://github.com/SteveDetm/Restart-Pod-Job.
+
 # -- This is the chart version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
 version: 0.1.1
