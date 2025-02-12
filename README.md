@@ -2,14 +2,13 @@
 
 ![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
 
-This Helm chart will deploy a CronJob to restart pods that have a specific time-to-live annotated. For more details of the origin Project lookup https://github.com/SteveDetm/Restart-Pod-Job.
+This Helm chart will deploy a CronJob to restart pods. It will use a specific time-to-live annotation for this matter. For more details follow the origin Project https://github.com/SteveDetm/Restart-Pod-Job.
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | cronJob.schedule | string | `"0 7 * * *"` | The value of that field follows the (Cron)[https://en.wikipedia.org/wiki/Cron] syntax: |
-| cronJob.securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"readOnlyRootFilesystem":false,"runAsNonRoot":true,"runAsUser":1001,"seccompProfile":{"type":"RuntimeDefault"}}` | This field specifies the security context for the container. This allows you to run the container as a non-root user. More information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ |
 | cronJob.securityContext.allowPrivilegeEscalation | bool | `false` | Prevents processes from gaining more privileges than they started with |
 | cronJob.securityContext.capabilities | object | `{"drop":["ALL"]}` | Drops all Linux capabilities to minimize privileges and reduce attack surface |
 | cronJob.securityContext.readOnlyRootFilesystem | bool | `false` | Allows writing to the root filesystem (should be 'true' if possible for better security) |
@@ -21,7 +20,7 @@ This Helm chart will deploy a CronJob to restart pods that have a specific time-
 | image.pullPolicy | string | `"IfNotPresent"` | This sets the pull policy for images. |
 | image.repository | string | `"ghcr.io/stevedetm/restart-pod-job"` | This sets the container image name and location to pull from. |
 | nameOverride | string | `""` | This is to override the chart name. |
-| serviceAccount | object | `{"annotations":{},"automount":false,"create":true,"name":""}` | This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/ |
+| serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.automount | bool | `false` | Automatically mount a ServiceAccount's API credentials |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
