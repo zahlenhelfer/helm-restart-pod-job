@@ -18,6 +18,8 @@ This Helm chart will deploy a CronJob to restart pods that have a specific time-
 | cronJob.securityContext.seccompProfile | object | `{"type":"RuntimeDefault"}` | Uses the default Seccomp profile provided by the container runtime for syscall restrictions |
 | cronJob.successfulJobsHistoryLimit | int | `1` | This field specifies the number of successful finished jobs to keep. The default value is 3. Setting this field to 0 will not keep any successful jobs. |
 | fullnameOverride | string | `""` |  |
+| image.pullPolicy | string | `"IfNotPresent"` | This sets the pull policy for images. |
+| image.repository | string | `"ghcr.io/stevedetm/restart-pod-job"` | This sets the container image name and location to pull from. |
 | nameOverride | string | `""` | This is to override the chart name. |
 | serviceAccount | object | `{"annotations":{},"automount":false,"create":true,"name":""}` | This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/ |
 | serviceAccount.automount | bool | `false` | Automatically mount a ServiceAccount's API credentials |
