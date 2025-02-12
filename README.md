@@ -4,6 +4,10 @@
 
 A Helm chart for Kubernetes
 
+## Source Code
+
+* <https://github.com/norwoodj/helm-docs/tree/master/example-charts/best-values-example>
+
 ## Values
 
 | Key | Type | Default | Description |
