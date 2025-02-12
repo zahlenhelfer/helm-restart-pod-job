@@ -25,5 +25,7 @@ serviceAccount:
   name: ""
 
 cronJob:
+  # -- This field specifies the number of successful finished jobs to keep. The default value is 3. Setting this field to 0 will not keep any successful jobs.
   successfulJobsHistoryLimit: 1
+  # -- The value of that field follows the (Cron)[https://en.wikipedia.org/wiki/Cron] syntax:
   schedule: "0 7 * * *"
