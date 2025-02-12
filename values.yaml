@@ -29,3 +29,15 @@ cronJob:
   successfulJobsHistoryLimit: 1
   # -- The value of that field follows the (Cron)[https://en.wikipedia.org/wiki/Cron] syntax:
   schedule: "0 7 * * *"
+  # -- This field specifies the security context for the container. This allows you to run the container as a non-root user. More information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+  securityContext:
+    capabilities:
+      drop:
+        - ALL
+    # https://github.com/opencost/opencost-helm-chart/issues/198
+    readOnlyRootFilesystem: false
+    runAsNonRoot: true
+    runAsUser: 1001
+    allowPrivilegeEscalation: false
+    seccompProfile:
+      type: RuntimeDefault

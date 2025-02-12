@@ -12,9 +12,15 @@ spec:
     spec:
       template:
         spec:
+          securityContext:
+            runAsUser: 1000
+            runAsNonRoot: true
           containers:
           - name: {{ .Chart.Name }}
             image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
             imagePullPolicy: {{ .Values.image.pullPolicy }}
+            {{- with .Values.cronJob.securityContext }}
+            securityContext: {{- toYaml . | nindent 14 }}
+            {{- end }}
           serviceAccountName: {{ include "helm-restart-pod-job.serviceAccountName" . }}
           restartPolicy: OnFailure
