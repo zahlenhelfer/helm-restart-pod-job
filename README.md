@@ -8,8 +8,8 @@ A Helm chart for Kubernetes
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| cronJob.schedule | string | `"0 7 * * *"` |  |
-| cronJob.successfulJobsHistoryLimit | int | `1` |  |
+| cronJob.schedule | string | `"0 7 * * *"` | The value of that field follows the (Cron)[https://en.wikipedia.org/wiki/Cron] syntax: |
+| cronJob.successfulJobsHistoryLimit | int | `1` | This field specifies the number of successful finished jobs to keep. The default value is 3. Setting this field to 0 will not keep any successful jobs. |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ghcr.io/stevedetm/restart-pod-job"` |  |
