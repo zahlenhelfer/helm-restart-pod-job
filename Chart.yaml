@@ -1,6 +1,6 @@
 apiVersion: v2
 name: helm-restart-pod-job
-description: This Helm chart will deploy a CronJob to restart pods that have a specific time-to-live annotated. For More Details - https://github.com/SteveDetm/Restart-Pod-Job.
+description: This Helm chart will deploy a CronJob to restart pods that have a specific time-to-live annotated. For more details of the origin Project lookup https://github.com/SteveDetm/Restart-Pod-Job.
 
 # -- This is the chart version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
@@ -9,10 +9,5 @@ version: 0.1.1
 # -- This is the version number of the application (container) being deployed.
 # It is recommended to use it with quotes.
 appVersion: "0.1.0"
-
-sources:
-  [
-    "https://github.com/norwoodj/helm-docs/tree/master/example-charts/best-values-example",
-  ]
 
 type: application
