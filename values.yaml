@@ -12,7 +12,6 @@ image:
 nameOverride: ""
 fullnameOverride: ""
 
-# -- This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
 serviceAccount:
   # -- Specifies whether a service account should be created
   create: true
@@ -29,7 +28,7 @@ cronJob:
   successfulJobsHistoryLimit: 1
   # -- The value of that field follows the (Cron)[https://en.wikipedia.org/wiki/Cron] syntax:
   schedule: "0 7 * * *"
-  # -- This field specifies the security context for the container. This allows you to run the container as a non-root user. More information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+  # This field specifies the security context for the container. This allows you to run the container as a non-root user. More information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
   securityContext:
     # -- Drops all Linux capabilities to minimize privileges and reduce attack surface
     capabilities:
