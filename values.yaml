@@ -6,12 +6,13 @@ image:
   # -- This sets the container image name and location to pull from.
   repository: ghcr.io/stevedetm/restart-pod-job
   # -- This sets the pull policy for images.
-  pullPolicy: IfNotPresent
+  pullPolicy: IfNotPresent # @schema enum: [IfNotPresent, Always, Never]
 
 # -- This is to override the chart name.
 nameOverride: ""
 fullnameOverride: ""
 
+# -- This is to override the chart version.
 serviceAccount:
   # -- Specifies whether a service account should be created
   create: true
