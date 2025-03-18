@@ -1,6 +1,6 @@
 # helm-restart-pod-job
 
-![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
+![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
 
 This Helm chart will deploy a CronJob to restart pods. It will use a specific time-to-live annotation for this matter. For more details follow the origin Project https://github.com/Hamburg-Port-Authority/Restart-Pod-Job.
 
@@ -8,7 +8,6 @@ This Helm chart will deploy a CronJob to restart pods. It will use a specific ti
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| cronJob.affinity | object | `{}` |  |
 | cronJob.resources.limits.cpu | string | `"100m"` |  |
 | cronJob.resources.limits.memory | string | `"128Mi"` |  |
 | cronJob.resources.requests.cpu | string | `"20m"` |  |
@@ -21,7 +20,6 @@ This Helm chart will deploy a CronJob to restart pods. It will use a specific ti
 | cronJob.securityContext.runAsUser | int | `1001` | Runs the container with a specific, non-root user ID (1001 in this case) |
 | cronJob.securityContext.seccompProfile | object | `{"type":"RuntimeDefault"}` | Uses the default Seccomp profile provided by the container runtime for syscall restrictions |
 | cronJob.successfulJobsHistoryLimit | int | `1` | This field specifies the number of successful finished jobs to keep. The default value is 3. Setting this field to 0 will not keep any successful jobs. |
-| cronJob.tolerations | object | `{}` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` | This sets the pull policy for images. |
 | image.repository | string | `"ghcr.io/Hamburg-Port-Authority/restart-pod-job"` | This sets the container image name and location to pull from. |
