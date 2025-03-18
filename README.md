@@ -13,7 +13,7 @@ This Helm chart will deploy a CronJob to restart pods. It will use a specific ti
 | cronJob.resources.limits.memory | string | `"128Mi"` |  |
 | cronJob.resources.requests.cpu | string | `"20m"` |  |
 | cronJob.resources.requests.memory | string | `"32Mi"` |  |
-| cronJob.schedule | string | `"0 7 * * *"` | The value of that field follows the (Cron)[https://en.wikipedia.org/wiki/Cron] syntax: |
+| cronJob.schedule | string | `"0 7 * * *"` | The value of that field follows the Cron syntax: |
 | cronJob.securityContext.allowPrivilegeEscalation | bool | `false` | Prevents processes from gaining more privileges than they started with |
 | cronJob.securityContext.capabilities | object | `{"drop":["ALL"]}` | Drops all Linux capabilities to minimize privileges and reduce attack surface |
 | cronJob.securityContext.readOnlyRootFilesystem | bool | `false` | Allows writing to the root filesystem (should be 'true' if possible for better security) |
@@ -26,7 +26,7 @@ This Helm chart will deploy a CronJob to restart pods. It will use a specific ti
 | image.pullPolicy | string | `"IfNotPresent"` | This sets the pull policy for images. |
 | image.repository | string | `"ghcr.io/stevedetm/restart-pod-job"` | This sets the container image name and location to pull from. |
 | nameOverride | string | `""` | This is to override the chart name. |
-| serviceAccount | object | `{"annotations":{},"automount":true,"create":true,"name":""}` | This is to override the chart version. |
+| serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.automount | bool | `true` | Automatically mount a ServiceAccount's API credentials |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
