@@ -46,3 +46,39 @@ cronJob:
     # -- Uses the default Seccomp profile provided by the container runtime for syscall restrictions
     seccompProfile:
       type: RuntimeDefault
+
+  # Resource requests and limits
+  resources:
+    requests:
+      memory: "32Mi"
+      cpu: "20m"
+    limits:
+      memory: "128Mi"
+      cpu: "100m"
+  
+  # Affinity rules
+  affinity: {}
+  #   nodeAffinity:
+  #     requiredDuringSchedulingIgnoredDuringExecution:
+  #       nodeSelectorTerms:
+  #       - matchExpressions:
+  #         - key: disktype
+  #           operator: In
+  #           values:
+  #           - ssd
+  #   podAffinity:
+  #     requiredDuringSchedulingIgnoredDuringExecution:
+  #     - labelSelector:
+  #         matchExpressions:
+  #         - key: app
+  #           operator: In
+  #           values:
+  #           - myapp
+  #       topologyKey: "kubernetes.io/hostname"
+
+  # Toleration rules
+  tolerations: {}
+  #   - key: "nodetype"
+  #     operator: "Equal"
+  #     value: "infrastructurenode"
+  #     effect: "NoSchedule"
