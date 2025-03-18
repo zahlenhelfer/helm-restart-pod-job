@@ -30,7 +30,7 @@ spec:
           affinity:
             {{- toYaml .Values.cronJob.affinity | nindent 12 }}
           {{- end }}
-          {{- if .Values.cronJob.affinity }}
+          {{- if .Values.cronJob.tolerations }}
           tolerations:
             {{- toYaml .Values.cronJob.tolerations | nindent 12 }}
           {{- end }}
