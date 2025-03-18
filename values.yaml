@@ -57,7 +57,7 @@ cronJob:
       cpu: "100m"
   
   # Affinity rules
-  affinity: {}
+  # affinity:
   #   nodeAffinity:
   #     requiredDuringSchedulingIgnoredDuringExecution:
   #       nodeSelectorTerms:
@@ -77,7 +77,7 @@ cronJob:
   #       topologyKey: "kubernetes.io/hostname"
 
   # Toleration rules
-  tolerations: {}
+  # tolerations: 
   #   - key: "nodetype"
   #     operator: "Equal"
   #     value: "infrastructurenode"
