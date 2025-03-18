@@ -1,6 +1,6 @@
 # helm-restart-pod-job
 
-![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
+![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.2](https://img.shields.io/badge/AppVersion-1.0.2-informational?style=flat-square)
 
 This Helm chart will deploy a CronJob to restart pods. It will use a specific time-to-live annotation for this matter. For more details follow the origin Project https://github.com/Hamburg-Port-Authority/Restart-Pod-Job.
 
