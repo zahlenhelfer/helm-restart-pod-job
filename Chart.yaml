@@ -4,10 +4,10 @@ description: This Helm chart will deploy a CronJob to restart pods. It will use 
 
 # -- This is the chart version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.0.3
+version: 1.0.4
 
 # -- This is the version number of the application (container) being deployed.
 # It is recommended to use it with quotes.
-appVersion: "1.0.3"
+appVersion: "1.0.4"
 
 type: application
