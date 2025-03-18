@@ -33,7 +33,7 @@ cronJob:
     # -- Drops all Linux capabilities to minimize privileges and reduce attack surface
     capabilities:
       drop:
-        - ALL
+      - ALL
     # -- Allows writing to the root filesystem (should be 'true' if possible for better security)
     readOnlyRootFilesystem: false
     # -- Ensures that the container does not run as the root user
@@ -49,13 +49,17 @@ cronJob:
   # Resource requests and limits
   resources:
     requests:
+      # -- This minimum amount of memory that the container is guaranteed.
       memory: "32Mi"
+      # -- The minimum amount of CPU that the container is guaranteed.
       cpu: "20m"
     limits:
+      # -- The amount of memory is limited to this value.
       memory: "128Mi"
+      # -- The amount of CPU is limited to this value.
       cpu: "100m"
-  
-  # Affinity rules
+
+  # -- Affinity rules influence pod scheduling by specifying preferences or requirements for pod placement.
   affinity: {}
   #   nodeAffinity:
   #     requiredDuringSchedulingIgnoredDuringExecution:
@@ -75,7 +79,7 @@ cronJob:
   #           - myapp
   #       topologyKey: "kubernetes.io/hostname"
 
-  # Toleration rules
+  # -- Toleration rules allow pods to be scheduled onto nodes with taints.
   tolerations: {}
   #   - key: "nodetype"
   #     operator: "Equal"
