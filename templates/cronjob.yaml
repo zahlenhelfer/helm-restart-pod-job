@@ -29,8 +29,8 @@ spec:
           {{- if .Values.cronJob.affinity }}
           affinity:
             {{- toYaml .Values.cronJob.affinity | nindent 12 }}
-          {{- endif }}
+          {{- end }}
           {{- if .Values.cronJob.affinity }}
           tolerations:
             {{- toYaml .Values.cronJob.tolerations | nindent 12 }}
-          {{- endif }}
+          {{- end }}
