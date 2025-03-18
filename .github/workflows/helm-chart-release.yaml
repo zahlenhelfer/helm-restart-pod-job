@@ -3,7 +3,7 @@ name: Release Charts
 on:
   push:
     tags:
-      - "*"
+    - "*"
 
 jobs:
   release:
@@ -11,20 +11,24 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    - uses: step-security/harden-runner@446798f8213ac2e75931c1b0769676d927801858 # v2.10.3
+      with:
+        egress-policy: audit
 
-      - name: Configure Git
-        run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
-      - name: Install Helm
-        uses: azure/setup-helm@v4
+    - name: Configure Git
+      run: |
+        git config user.name "$GITHUB_ACTOR"
+        git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    - name: Install Helm
+      uses: azure/setup-helm@v4
+
+    - name: Run chart-releaser
+      uses: helm/chart-releaser-action@v1
+      env:
+        CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
