@@ -60,7 +60,7 @@ cronJob:
       cpu: '100m'
 
   # -- Affinity rules influence pod scheduling by specifying preferences or requirements for pod placement.
-  affinity: {}
+  # affinity:
   #   nodeAffinity:
   #     requiredDuringSchedulingIgnoredDuringExecution:
   #       nodeSelectorTerms:
@@ -80,7 +80,7 @@ cronJob:
   #       topologyKey: "kubernetes.io/hostname"
 
   # -- Toleration rules allow pods to be scheduled onto nodes with taints.
-  tolerations: {}
+  # tolerations: 
   #   - key: "nodetype"
   #     operator: "Equal"
   #     value: "infrastructurenode"

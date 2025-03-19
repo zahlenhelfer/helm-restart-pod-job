@@ -26,7 +26,11 @@ spec:
               {{- toYaml .Values.cronJob.resources | nindent 14 }}
           serviceAccountName: {{ include "helm-restart-pod-job.serviceAccountName" . }}
           restartPolicy: OnFailure
+          {{- if .Values.cronJob.affinity }}
           affinity:
             {{- toYaml .Values.cronJob.affinity | nindent 12 }}
+          {{- end }}
+          {{- if .Values.cronJob.tolerations }}
           tolerations:
             {{- toYaml .Values.cronJob.tolerations | nindent 12 }}
+          {{- end }}

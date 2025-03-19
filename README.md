@@ -1,8 +1,8 @@
 # helm-restart-pod-job
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
+![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.4](https://img.shields.io/badge/AppVersion-1.0.4-informational?style=flat-square)
 
-This Helm chart will deploy a CronJob to restart pods. It will use a specific time-to-live annotation for this matter. For more details follow the origin Project https://github.com/SteveDetm/Restart-Pod-Job.
+This Helm chart will deploy a CronJob to restart pods. It will use a specific time-to-live annotation for this matter. For more details follow the origin Project https://github.com/Hamburg-Port-Authority/Restart-Pod-Job.
 
 ## Values
 
@@ -13,7 +13,7 @@ This Helm chart will deploy a CronJob to restart pods. It will use a specific ti
 | cronJob.resources.limits.memory | string | `"128Mi"` | The amount of memory is limited to this value. |
 | cronJob.resources.requests.cpu | string | `"20m"` | The minimum amount of CPU that the container is guaranteed. |
 | cronJob.resources.requests.memory | string | `"32Mi"` | This minimum amount of memory that the container is guaranteed. |
-| cronJob.schedule | string | `"0 7 * * *"` | The value of that field follows the Cron syntax: |
+| cronJob.schedule | string | `"0 7 * * *"` | The value of that field follows the (Cron)[https://en.wikipedia.org/wiki/Cron] syntax: |
 | cronJob.securityContext.allowPrivilegeEscalation | bool | `false` | Prevents processes from gaining more privileges than they started with |
 | cronJob.securityContext.capabilities | object | `{"drop":["ALL"]}` | Drops all Linux capabilities to minimize privileges and reduce attack surface |
 | cronJob.securityContext.readOnlyRootFilesystem | bool | `false` | Allows writing to the root filesystem (should be 'true' if possible for better security) |
@@ -24,7 +24,7 @@ This Helm chart will deploy a CronJob to restart pods. It will use a specific ti
 | cronJob.tolerations | object | `{}` | Toleration rules allow pods to be scheduled onto nodes with taints. |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` | This sets the pull policy for images. |
-| image.repository | string | `"ghcr.io/stevedetm/restart-pod-job"` | This sets the container image name and location to pull from. |
+| image.repository | string | `"ghcr.io/Hamburg-Port-Authority/restart-pod-job"` | This sets the container image name and location to pull from. |
 | nameOverride | string | `""` | This is to override the chart name. |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.automount | bool | `true` | Automatically mount a ServiceAccount's API credentials |
