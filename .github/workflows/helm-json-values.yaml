@@ -16,3 +16,4 @@ jobs:
         with:
           input: values.yaml
           git-push: true
+          git-commit-message: "chore: update values schema json"
