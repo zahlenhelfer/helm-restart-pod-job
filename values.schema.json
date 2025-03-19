@@ -85,7 +85,6 @@
             "type": "object"
         },
         "fullnameOverride": {
-            "minLength": 3,
             "type": "string"
         },
         "image": {
@@ -99,14 +98,13 @@
                     "type": "string"
                 },
                 "repository": {
-                    "pattern": "^[a-z]+$ required:true",
+                    "pattern": "^[a-z0-9./-]+$ required:true",
                     "type": "string"
                 }
             },
             "type": "object"
         },
         "nameOverride": {
-            "minLength": 3,
             "type": "string"
         },
         "serviceAccount": {
