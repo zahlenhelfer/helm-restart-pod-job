@@ -97,7 +97,7 @@
                     "type": "string"
                 },
                 "repository": {
-                    "pattern": "^[a-z0-9./-]+$ required:true",
+                    "pattern": "^[a-z0-9./-]+$",
                     "type": "string"
                 }
             },
