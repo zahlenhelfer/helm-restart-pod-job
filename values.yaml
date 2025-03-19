@@ -4,7 +4,7 @@
 
 image:
   # -- This sets the container image name and location to pull from.
-  repository: ghcr.io/stevedetm/restart-pod-job # @schema pattern:^[a-z0-9./-]+$ required:true
+  repository: ghcr.io/stevedetm/restart-pod-job # @schema pattern: ^[a-z0-9./-]+$ required:true
   # -- This sets the pull policy for images.
   pullPolicy: IfNotPresent # @schema enum: [IfNotPresent, Always, Never]
 
@@ -27,7 +27,7 @@ cronJob:
   # -- This field specifies the number of successful finished jobs to keep. The default value is 3. Setting this field to 0 will not keep any successful jobs.
   successfulJobsHistoryLimit: 1
   # -- The value of that field follows the Cron syntax:
-  schedule: '0 7 * * *' # @schema pattern: ^((\\*|[0-5]?\\d)(\\/\\d+)?|([0-5]?\\d-[0-5]?\\d))(\\s+)((\\*|1?\\d|2[0-3])(\\/\\d+)?|((1?\\d|2[0-3])-(1?\\d|2[0-3])))(\\s+)((\\*|0?[1-9]|[12]\\d|3[01])(\\/\\d+)?|((0?[1-9]|[12]\\d|3[01])-(0?[1-9]|[12]\\d|3[01])))(\\s+)((\\*|[1-9]|1[012])(\\/\\d+)?|(([1-9]|1[012])-([1-9]|1[012])))(\\s+)((\\*|[0-6])(\\/\\d+)?|([0-6]-[0-6]))$ ;
+  schedule: '0 7 * * *'
   # This field specifies the security context for the container. This allows you to run the container as a non-root user. More information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
   securityContext:
     # -- Drops all Linux capabilities to minimize privileges and reduce attack surface
