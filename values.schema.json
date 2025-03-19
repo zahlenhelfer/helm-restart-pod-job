@@ -3,10 +3,6 @@
     "properties": {
         "cronJob": {
             "properties": {
-                "affinity": {
-                    "properties": {},
-                    "type": "object"
-                },
                 "resources": {
                     "properties": {
                         "limits": {
@@ -75,10 +71,6 @@
                 },
                 "successfulJobsHistoryLimit": {
                     "type": "integer"
-                },
-                "tolerations": {
-                    "properties": {},
-                    "type": "object"
                 }
             },
             "type": "object"
