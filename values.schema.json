@@ -1,11 +1,15 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
     "properties": {
         "cronJob": {
+            "type": "object",
             "properties": {
                 "resources": {
+                    "type": "object",
                     "properties": {
                         "limits": {
+                            "type": "object",
                             "properties": {
                                 "cpu": {
                                     "type": "string"
@@ -13,10 +17,10 @@
                                 "memory": {
                                     "type": "string"
                                 }
-                            },
-                            "type": "object"
+                            }
                         },
                         "requests": {
+                            "type": "object",
                             "properties": {
                                 "cpu": {
                                     "type": "string"
@@ -24,30 +28,29 @@
                                 "memory": {
                                     "type": "string"
                                 }
-                            },
-                            "type": "object"
+                            }
                         }
-                    },
-                    "type": "object"
+                    }
                 },
                 "schedule": {
                     "type": "string"
                 },
                 "securityContext": {
+                    "type": "object",
                     "properties": {
                         "allowPrivilegeEscalation": {
                             "type": "boolean"
                         },
                         "capabilities": {
+                            "type": "object",
                             "properties": {
                                 "drop": {
+                                    "type": "array",
                                     "items": {
                                         "type": "string"
-                                    },
-                                    "type": "array"
+                                    }
                                 }
-                            },
-                            "type": "object"
+                            }
                         },
                         "readOnlyRootFilesystem": {
                             "type": "boolean"
@@ -59,53 +62,51 @@
                             "type": "integer"
                         },
                         "seccompProfile": {
+                            "type": "object",
                             "properties": {
                                 "type": {
                                     "type": "string"
                                 }
-                            },
-                            "type": "object"
+                            }
                         }
-                    },
-                    "type": "object"
+                    }
                 },
                 "successfulJobsHistoryLimit": {
                     "type": "integer"
                 }
-            },
-            "type": "object"
+            }
         },
         "fullnameOverride": {
             "type": "string"
         },
         "image": {
+            "type": "object",
             "properties": {
                 "pullPolicy": {
+                    "type": "string",
                     "enum": [
                         "IfNotPresent",
                         "Always",
                         "Never"
-                    ],
-                    "type": "string"
+                    ]
                 },
                 "repository": {
-                    "pattern": "^[a-z0-9./-]+$",
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^[a-z0-9./-]+$"
                 }
-            },
-            "type": "object"
+            }
         },
         "nameOverride": {
             "type": "string"
         },
         "serviceAccount": {
+            "type": "object",
             "properties": {
                 "annotations": {
+                    "type": "object",
                     "items": {
                         "type": "object"
-                    },
-                    "properties": {},
-                    "type": "object"
+                    }
                 },
                 "automount": {
                     "type": "boolean"
@@ -116,9 +117,7 @@
                 "name": {
                     "type": "string"
                 }
-            },
-            "type": "object"
+            }
         }
-    },
-    "type": "object"
+    }
 }
