@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'templates/**'
+      - 'values.yaml'
+      - 'Chart.yaml'
 
 jobs:
   package-and-deploy:
